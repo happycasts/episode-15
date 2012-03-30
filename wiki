@@ -1,8 +1,20 @@
 now I know "apt-get update" will get me all the pkg name+info, of all the repos in sources.list
-but my questions is where is the info saved on local drive?
-Is it a same file that apt-cache uses?
-Is it /var/cache/apt/pkgcache.bin?
-what is /var/lib/dpkg/status?
+but my questions is 
+
+Q: where is the info saved on local drive?
+A: plain text list: /var/lib/apt/lists
+   binary: /var/cache/apt/pkgcache.bin
+
+Q: Is it a same file that apt-cache uses?
+A: Yes and No.
+`apt-get update` will store same info in these two places.
+But if I delete a package in the plain text version, apt-get still can tab complete the pkg name, but end result is a error:
+
+  E: Package 'abrowser' has no installation candidate
+
+
+what is /var/lib/dpkg/status? Installed packages list in current system
+
 
 SO, I guess it is like this:
 1. apt-get install pkg-not-in-cache
@@ -12,3 +24,24 @@ SO, I guess it is like this:
 3. apt-get intall pkg-now-in-cache
    #same pkg in step1 is now installed
 
+
+
+delete most repos in sources.list, and I have
+
+    peter:/var/cache/apt$ du -sh pkgcache.bin 
+    16M pkgcache.bin
+    peter:/var/cache/apt$ du -sh pkgcache.bin 
+    1.5M    pkgcache.bin
+    peter:/var/cache/apt$ 
+
+And I see this on web:
+
+    pkgcache Apt’s memory mapped package cache location, normally /var/cache/apt/pkgcache.bin
+    Quote
+    it is dangerous to delete pkgcache.bin ?
+    No – package managers just make new one.
+    Sometimes it is good to remove pkgcache.bin:
+    apt-get, aptitude, synaptic, update- manager crash
+    http://ubuntuforums.org/showthread.php?t=299705
+    Quote
+    Try removing /var/cache/apt/pkgcache.bin and /var/cache/apt/srcpkgcache.bin then re-run apt-get update
