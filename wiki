@@ -1,0 +1,14 @@
+now I know "apt-get update" will get me all the pkg name+info, of all the repos in sources.list
+but my questions is where is the info saved on local drive?
+Is it a same file that apt-cache uses?
+Is it /var/cache/apt/pkgcache.bin?
+what is /var/lib/dpkg/status?
+
+SO, I guess it is like this:
+1. apt-get install pkg-not-in-cache
+   #this end up with a error
+2. sudo apt-get update
+   #get all pkg names of all repos in sources.list
+3. apt-get intall pkg-now-in-cache
+   #same pkg in step1 is now installed
+
