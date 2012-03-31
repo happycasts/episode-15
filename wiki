@@ -13,7 +13,7 @@ But if I delete a package in the plain text version, apt-get still can tab compl
   E: Package 'abrowser' has no installation candidate
 
 
-what is /var/lib/dpkg/status? Installed packages list in current system
+what is /var/lib/dpkg/status? Installed packages list in current system, plz to go when you want to check the info of your installed package, and you don't want to remember all the fucking apt-cache commands and options
 
 
 SO, I guess it is like this:
