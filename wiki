@@ -74,3 +74,25 @@ FIX: for "extra.ubuntu" repo KEY issue:
 
 I do not use extra repo I think, but at least I won't see the "PUB KEY" error everytime I run "apt-get update"
 ----
+
+----
+A typical work-flow to use sb's repo:
+
+    To use this repo add the gpg key
+
+            wget -O - http://apt.baruwa.org/baruwa-apt-keys.gpg | apt-key add -
+        
+
+    Add the repo to your /etc/apt/sources.list
+
+            #debian
+            deb http://apt.baruwa.org/debian unstable main
+            #ubuntu
+            deb http://apt.baruwa.org/ubuntu natty main
+        
+
+    Then install using
+
+        apt-get update
+        apt-get install baruwa
+----    
