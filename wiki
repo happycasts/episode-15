@@ -57,3 +57,10 @@ this might be useful:
     peter:~$ dpkg -S /lib/libncursesw.so.5
     libncursesw5: /lib/libncursesw.so.5
 
+
+Now how to solove the "unautenticated" issue when doing "apt-get install happyhello"?
+
+  sudo apt-get install gnupg # and a lot of steps here
+
+
+it seems that ppa is the right way to go: https://help.launchpad.net/Packaging/PPA
