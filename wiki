@@ -60,7 +60,7 @@ this might be useful:
 
 Now how to solove the "unautenticated" issue when doing "apt-get install happyhello"?
 
-  sudo apt-get install gnupg # and a lot of steps here
+  sudo apt-get install gnupg # and a lot of steps here http://tech.randomness.org.uk/Setting_up_a_Signed_apt_repo.html
 
 
 it seems that ppa is the right way to go: https://help.launchpad.net/Packaging/PPA
