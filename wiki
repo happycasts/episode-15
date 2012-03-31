@@ -96,3 +96,9 @@ A typical work-flow to use sb's repo:
         apt-get update
         apt-get install baruwa
 ----    
+
+----
+ERROR: failed to fetch http://repo.org/pool/main/h/happyhello/happyhello_1.0_i386.deb  Hash Sum mismatch
+FIX: this simply means the checksum fileds in Packages.gz is not optional
+This wasted me a lot of time, since when I first deleted the checksum fields, there was no error, must be cached somewhere!!
+---
