@@ -64,3 +64,13 @@ Now how to solove the "unautenticated" issue when doing "apt-get install happyhe
 
 
 it seems that ppa is the right way to go: https://help.launchpad.net/Packaging/PPA
+
+----
+FIX: for "extra.ubuntu" repo KEY issue:
+
+    gpg --keyserver keyserver.ubuntu.com --recv 3E5C1192
+    gpg --export --armor 3E5C1192 | sudo apt-key add -
+    sudo apt-get update
+
+I do not use extra repo I think, but at least I won't see the "PUB KEY" error everytime I run "apt-get update"
+----
