@@ -102,3 +102,8 @@ ERROR: failed to fetch http://repo.org/pool/main/h/happyhello/happyhello_1.0_i38
 FIX: this simply means the checksum fileds in Packages.gz is not optional
 This wasted me a lot of time, since when I first deleted the checksum fields, there was no error, must be cached somewhere!!
 ---
+
+---
+if there is a wrong /var/lib/apt/repo.org_xxx_xxx
+`apt-get update` won't be able to update it. you have to remove the wrong file.
+----
