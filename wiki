@@ -45,3 +45,15 @@ And I see this on web:
     http://ubuntuforums.org/showthread.php?t=299705
     Quote
     Try removing /var/cache/apt/pkgcache.bin and /var/cache/apt/srcpkgcache.bin then re-run apt-get update
+
+this might be useful:
+
+    peter:~$ ldd `which xxx`
+        linux-gate.so.1 =>  (0x003fd000)
+        libncursesw.so.5 => /lib/libncursesw.so.5 (0x00be9000)
+        libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0x00110000)
+        libdl.so.2 => /lib/i386-linux-gnu/libdl.so.2 (0x00918000)
+        /lib/ld-linux.so.2 (0x00c72000)
+    peter:~$ dpkg -S /lib/libncursesw.so.5
+    libncursesw5: /lib/libncursesw.so.5
+
